@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Test2",
+            "request": "launch",
+            "mainClass": "Oppgave2.Test2",
+            "projectName": "Oblig3_8856228f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Oppgave2.Test",
+            "projectName": "Oblig3_8856228f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Oppgave2.Main",
+            "projectName": "Oblig3_8856228f"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
