@@ -7,30 +7,29 @@ public class Main {
   public static void main(String[] args) {
     //for å få en tilfeldig tall
     Random tilfeldig = new Random();
-    //n = array størrelse, antal = hvor mye ganger skal vi kjøre test, rang maks tall brukt i testen
-    int n = 100, antal = 1, range = 100000;
-    int[][] testTab = new int[antal][n];
-    //føler test tabeler
-    for (int i = 0; i < antal; i++) {
+    //n = array størrelse, antall = hvor mye ganger skal vi kjøre test, rang maks tall brukt i testen
+    int n = 10, antall = 1, range = 10000;
+    int[][] testTab = new int[antall][n];
+    //fyler opp test tabeler
+    for (int i = 0; i < antall; i++) {
       for (int j = 0; j < n; j++) {
         testTab[i][j] = tilfeldig.nextInt(range);
       }
     }
     //tidsmåling start
     long start = System.currentTimeMillis();
-    //gjenomfør sortering
     for (int[] tab : testTab) {
       //sorterings algoritme brukt i testen
       kvikkSortering(tab);
     }
     //tidsmåling slutt
     long end = System.currentTimeMillis();
-    System.out.println(end - start + "ms");
-
+    System.out.println("Total tid=" + (end - start) + "ms, metoden ble gjennomført " + antall + (antall == 1 ? " gang." : " ganger."));
+    System.out.println("Gjennomsnitt=" + (((double)(end - start) /antall) + "ms"));
   }
 
   // n tabbel størrelse, range største tilfeldig tall
-  public static int[] createTabel(int n, int range) {
+  public static int[] createTabel(int n,int range) {
     int[] tab = new int[n];
     Random random = new Random();
     for (int i = 0; i < n; i++) {
